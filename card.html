@@ -1,0 +1,367 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<ul class="lightrope">
+  <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+  <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+  <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+  <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+</ul>
+<canvas class="confetti"></canvas>
+<div class="card">
+  <div class="back">
+    <img class="card-photo card-photo1" src="WhatsApp Image 2025-07-01 at 11.37.50 AM.jpeg" alt="Birthday Photo 1">
+    <img class="card-photo card-photo2" src="WhatsApp Image 2025-07-01 at 11.48.52 AM.jpeg" alt="Birthday Photo 2">
+    <img class="card-photo card-photo3" src="WhatsApp Image 2025-07-01 at 11.48.53 AM.jpeg" alt="Birthday Photo 3">
+</div>
+  <div class="front">
+    <div class="imgset">
+         <img width="100%" src="https://1.bp.blogspot.com/-Mgj9-rbs65E/XfMoPSD5gtI/AAAAAAAAURk/NBokE2gSS2cTSJ2em5lZ5hJDuTtRN7UVwCLcBGAsYHQ/s1600/2713997.png">
+       </div>
+  </div>
+  <div class="text-container">
+    <p id="head">Happy Birthday Hiya🎂!!</p>
+    <p>I hope this year will bring you lots of happiness and fun.You deserve them a lot.I pray k tere sare sapne sach ho jo bhi tune dream kiya hai wo sab tu ek ek karke achieve kare aur tu karegi I know that you can do it.</p>
+    <p>I always feel motivated to work when you are around me.Like jabhi esa feel karta hu kuch nai ho raha kuch nahi hoga tab tab tune motivate kiya hai back to track layi hai.</p>
+    <p>Thank you for being such a good friend of me.</p>
+    <p>Have a nice year!</p>
+  </div>
+</div>
+<!-- Navigation Button -->
+<a href="box.html" class="nav-button" id="nextBtn" style="display:none;">Next</a>
+<script>
+setTimeout(function(){ document.getElementById('nextBtn').style.display = 'inline-block'; }, 5000);
+</script>
+</body>
+<style>
+    body
+{
+  background-image: linear-gradient(to right top, #1f0537, #380c60, #55108c, #7413bb, #9612eb);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.card {
+	 position: relative;
+	 width: 300px;
+	 height: 425px;
+	 border: 10px solid #9612eb;
+	 margin: 60px auto 0 auto;
+	 box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255), rgba(255, 255, 255, 0.5)), url("https://images.unsplash.com/photo-1527481138388-31827a7c94d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+
+background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+	 background-color: #e6f0e6;
+}
+ .card .text-container {
+	 width: 80%;
+	 height: 80%;
+	 margin: auto;
+     overflow-y: auto; /* This is the key line */
+    padding-right: 15px;
+}
+ .strikethrough {
+	 text-decoration: line-through;
+}
+ .card .text-container #head {
+	 /* Remove display: none so Happy Birthday is always visible */
+}
+ .card p {
+	 font-size: 1.1em;
+	 line-height: 1.4;
+	 font-family: 'Nobile';
+	 color: #331717;
+	 font-style: italic;
+	 text-align: center;
+	 margin: 30px auto 0px auto;
+}
+ .card .front {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 margin: -10px 0px 0px -10px;
+	 border: 10px solid #9612eb;
+	 backface-visibility: hidden;
+	 background-color: #9612eb;
+	/* background-image: url($cover-image);
+	 */
+	 background-size: contain;
+	 transform-style: preserve-3d;
+	 transform-origin: 0% 50%;
+	 transform: perspective(800px) rotateY(0deg);
+	 transition: all 0.8s ease-in-out;
+}
+ .card:hover .front {
+	 transform: perspective(800px) rotateY(-170deg);
+	 background-color: #41718d;
+}
+ .card:hover .back {
+	 transform: perspective(800px) rotateY(-170deg);
+	 box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+	 background-color: #d2dcd2;
+}
+ .card .back {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 border: 10px solid #9612eb;
+	 margin: -10px 0px 0px -10px;
+	 backface-visibility: visible;
+	 filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .5));
+	 transform-style: preserve-3d;
+	 transform-origin: 0% 50%;
+	 transform: perspective(800px) rotateY(0deg);
+	 transition: all 0.8s ease-in-out;
+	 background-color: #e6f0e6;
+	 box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+	 overflow: hidden;
+	 background-image: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="3" fill="%23ff69b4" fill-opacity="0.18"/><circle cx="24" cy="24" r="2.5" fill="%239612eb" fill-opacity="0.18"/><circle cx="24" cy="8" r="2" fill="%23ffd700" fill-opacity="0.18"/><circle cx="8" cy="24" r="2" fill="%2300f7a5" fill-opacity="0.18"/></svg>');
+	 background-repeat: repeat;
+	 background-size: 48px 48px;
+}
+.card-photo {
+    position: absolute;
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 18px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 2;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.card:hover .card-photo {
+    opacity: 1;
+}
+.card-photo1 {
+    left: 10px;
+    top: 10px;
+    transform: rotate(-8deg);
+}
+.card-photo2 {
+    left: auto;
+    right: 10px;
+    top: 130px;
+    transform: rotate(7deg);
+}
+.card-photo3 {
+    left: 10px;
+    top: 260px;
+    transform: rotate(-5deg);
+}
+.imgset
+{
+  position: relative;
+  z-index: 1;
+  margin-bottom: -215px;
+}
+.imgset img
+{
+    box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);
+    border-radius: 5px;
+}
+/* Styles for the navigation button */
+.nav-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 0 20px 5px #ff69b4, 0 5px 15px rgba(0,0,0,0.3);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    z-index: 100;
+    animation: glow 1s infinite alternate;
+}
+@keyframes glow {
+    from { box-shadow: 0 0 20px 5px #ff69b4, 0 5px 15px rgba(0,0,0,0.3); }
+    to { box-shadow: 0 0 40px 10px #ff1493, 0 8px 20px rgba(0,0,0,0.4); }
+}
+.nav-button:hover {
+    background: linear-gradient(90deg, #ff1493, #ff69b4);
+    transform: translateX(-50%) translateY(-3px) scale(1.05);
+    box-shadow: 0 0 40px 10px #ff1493, 0 8px 20px rgba(0,0,0,0.4);
+}
+.nav-button:active {
+    transform: translateX(-50%) translateY(0) scale(1);
+    box-shadow: 0 0 20px 5px #ff69b4, 0 2px 5px rgba(0,0,0,0.2);
+}
+.lightrope {
+    text-align: center;
+    white-space: nowrap;
+    overflow: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    margin: 0;
+    pointer-events: none;
+}
+.lightrope li {
+    position: relative;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    list-style: none;
+    margin: 0 1vw;
+    padding: 0;
+    display: inline-block;
+    width: 12px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(0, 247, 165, 1);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 1);
+    animation-name: flash-1;
+    animation-duration: 2s;
+    z-index: 1;
+}
+.lightrope li:nth-child(2n + 1) {
+    background: rgba(0, 255, 255, 1);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 0.5);
+    animation-name: flash-2;
+    animation-duration: 0.4s;
+}
+.lightrope li:nth-child(4n + 2) {
+    background: rgba(247, 0, 148, 1);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 1);
+    animation-name: flash-3;
+    animation-duration: 1.1s;
+}
+.lightrope li:nth-child(odd) {
+    animation-duration: 1.8s;
+}
+.lightrope li:nth-child(3n + 1) {
+    animation-duration: 1.4s;
+}
+.lightrope li:before {
+    content: "";
+    position: absolute;
+    background: #222;
+    width: 10px;
+    height: 9.3333333333px;
+    border-radius: 3px;
+    top: -4.6666666667px;
+    left: 1px;
+}
+.lightrope li:after {
+    content: "";
+    top: -14px;
+    left: 9px;
+    position: absolute;
+    width: 52px;
+    height: 18.6666666667px;
+    border-bottom: solid #222 2px;
+    border-radius: 50%;
+}
+.lightrope li:last-child:after {
+    content: none;
+}
+.lightrope li:first-child {
+    margin-left: -40px;
+}
+@keyframes flash-1 {
+    0%, 100% {
+        background: rgba(0, 247, 165, 1);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 1);
+    }
+    50% {
+        background: rgba(0, 247, 165, 0.4);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 0.2);
+    }
+}
+@keyframes flash-2 {
+    0%, 100% {
+        background: rgba(0, 255, 255, 1);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 1);
+    }
+    50% {
+        background: rgba(0, 255, 255, 0.4);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 0.2);
+    }
+}
+@keyframes flash-3 {
+    0%, 100% {
+        background: rgba(247, 0, 148, 1);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 1);
+    }
+    50% {
+        background: rgba(247, 0, 148, 0.4);
+        box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 0.2);
+    }
+}
+.confetti {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+}
+.card {
+    position: relative;
+    width: 320px;
+    height: 445px;
+    border: 10px solid #ff69b4;
+    margin: 120px auto 0 auto;
+    box-shadow: 0 0 40px 10px #ff69b4, 0 10px 30px 0 rgba(150, 18, 235, 0.4), 0 2px 8px 0 rgba(0,0,0,0.2);
+    background-image:
+        url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="3" fill="%23ff69b4" fill-opacity="0.18"/><circle cx="30" cy="30" r="2" fill="%239612eb" fill-opacity="0.18"/><circle cx="30" cy="10" r="1.5" fill="%23ffd700" fill-opacity="0.18"/><circle cx="10" cy="30" r="2.5" fill="%2300f7a5" fill-opacity="0.18"/></svg>'),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7)),
+        url("https://images.unsplash.com/photo-1527481138388-31827a7c94d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    background-position: center;
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-size: auto, cover, cover;
+    background-color: #e6f0e6;
+    border-radius: 24px;
+    overflow: visible;
+    z-index: 10;
+}
+.card:hover {
+    box-shadow: none !important;
+}
+</style>
+<script>
+// Confetti effect (same as index)
+const canvas = document.querySelector('.confetti');
+const ctx = canvas.getContext('2d');
+let W = window.innerWidth, H = window.innerHeight;
+canvas.width = W; canvas.height = H;
+let confs = Array.from({length: 60}, () => ({
+    x: Math.random()*W, y: Math.random()*H, r: Math.random()*6+4, d: Math.random()*60, color: `hsl(${Math.random()*360},90%,70%)`, tilt: Math.random()*10-10
+}));
+function drawConfetti() {
+    ctx.clearRect(0,0,W,H);
+    for(let i=0;i<confs.length;i++){
+        let c=confs[i];
+        ctx.beginPath();
+        ctx.lineWidth = c.r/2;
+        ctx.strokeStyle = c.color;
+        ctx.moveTo(c.x+c.tilt+Math.sin(c.d)*15, c.y);
+        ctx.lineTo(c.x+c.tilt, c.y+c.r);
+        ctx.stroke();
+    }
+    updateConfetti();
+}
+function updateConfetti() {
+    for(let i=0;i<confs.length;i++){
+        let c=confs[i];
+        c.y += Math.cos(c.d)+1+c.r/2/2;
+        c.x += Math.sin(0.5)+Math.sin(c.d);
+        if(c.x > W+20 || c.x < -20 || c.y > H) {
+            confs[i] = {x: Math.random()*W, y: -10, r: c.r, d: c.d, color: c.color, tilt: c.tilt};
+        }
+    }
+}
+setInterval(drawConfetti, 33);
+window.addEventListener('resize', function(){
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W; canvas.height = H;
+});
+</script>

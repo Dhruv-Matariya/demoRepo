@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #f9748f;
+      animation: fadeIn 2s ease-in-out;
+      transition: background-color 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+    }
+
+    p {
+      font-size: 1.3rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: white;
+      color: #f9748f;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+      animation: pulse 2s infinite;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background-color: #ffe2eb;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 10px rgba(255,255,255,0.6); }
+      50% { box-shadow: 0 0 20px rgba(255,255,255,1); }
+    }
+
+    .firefly {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    .floating-balloon {
+      position: absolute;
+      width: 60px;
+      animation: floatUp 10s linear infinite;
+      opacity: 0.9;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150vh);
+    opacity: 0;
+  }
+
+  .floating-balloon {
+  position: absolute;
+  width: 60px;
+  animation: floatUp 10s linear infinite, sway 2s ease-in-out infinite alternate;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+@keyframes sway {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+
+}
+
+    }
+  </style>
+</head>
+<body id="bdayBody">
+
+  <h1>Hey, Birthday girl. 🎉</h1>
+  <p>Are you ready for your surprise?</p>
+  <button class="button" onclick="goToNextPage()">Click to Begin 🥳</button>
+
+  <!-- Fireflies -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      let dot = document.createElement("div");
+      dot.classList.add("firefly");
+      dot.style.top = Math.random() * 100 + "vh";
+      dot.style.left = Math.random() * 100 + "vw";
+      dot.style.animationDuration = 1.5 + Math.random() * 2 + "s";
+      document.body.appendChild(dot);
+    }
+  </script>
+
+  <!-- Floating Balloons -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      let balloon = document.createElement("img");
+      balloon.src = "balloon.webp"; // Make sure this image exists
+      balloon.className = "floating-balloon";
+      balloon.style.left = Math.random() * 90 + "vw";
+      balloon.style.animationDuration = (8 + Math.random() * 5) + "s";
+      balloon.style.width = (40 + Math.random() * 30) + "px";
+      document.body.appendChild(balloon);
+    }
+  </script>
+
+  <!-- Background Color Animation -->
+  <script>
+    const colors = ["#f9748f", "#f78ca0", "#ff9a8b", "#fbc2eb", "#a18cd1"];
+    let index = 0;
+    setInterval(() => {
+      document.body.style.backgroundColor = colors[index];
+      index = (index + 1) % colors.length;
+    }, 2500);
+  </script>
+
+  <script>
+    function goToNextPage() {
+      alert("Yeah! Let's go click on screen to blow firework on next page🎈");
+      window.location.href = "firework.html";
+    }
+  </script>
+
+</body>
+</html>
